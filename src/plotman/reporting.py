@@ -11,7 +11,7 @@ def abbr_path(path, putative_prefix):
     if putative_prefix and path.startswith(putative_prefix):
         return os.path.relpath(path, putative_prefix)
     else:
-        return path
+        return path.split('/')[-2] + "/" + path.split('/')[-1] 
     
 def phase_str(phase_pair):
     (ph, subph) = phase_pair
